@@ -1,0 +1,404 @@
+class Solution {
+    public void pattern1(int n) {
+        for(int i=0; i<n;i++){
+            for(int j=0;j<n;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern2(int n) {
+        for(int i=1; i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern3(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+
+class Solution {
+    public void pattern4(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+
+class Solution {
+    public void pattern5(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern6(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern7(int n) {
+        for(int i=1;i<=n;i++){
+            //spaces
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            //spaces
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern8(int n) {
+        for(int i=0;i<n;i++){
+            //spaces
+            for(int j=0;j<i;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j=0;j<=2*(n-i)-1;j++){
+                System.out.print("*");
+            }
+            //spaces
+            for(int j=0;j<i;j++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern9(int n) {
+        for(int i=0;i<n;i++){
+            //spaces
+            for(int j=0; j<n-i-1;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j=0;j<2*i+1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=0;i<n;i++){
+            //spaces
+            for(int j=0;j<i;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j=0;j<2*(n-i)-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+}
+
+class Solution {
+    public void pattern10(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=1;i<n;i++){
+            for(int j=0 ;j<n-i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern11(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                if((i+j)%2==0){
+                    System.out.print("1 ");
+                }else{
+                    System.out.print("0 ")
+                }
+            }
+            System.out.println();
+
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern12(int n) {
+        for(int i=1;i<=n;i++){
+            //numbers
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            //spaces
+            for(int j=1;j<=2*(n-i);j++){
+                System.out.print(" ");
+            }
+            //numbers
+            for(int j=i;j>=1;j--){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern13(int n) {
+        int counter=1;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print(counter+" ");
+                counter++;
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern14(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print((char) ('A'+j));
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern15(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n-i;j++){
+                System.out.print((char)('A'+j));
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern16(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print((char)('A'+i))
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern17(int n) {
+        for(int i=0;i<n;i++){
+            //spaces
+            for(int j=0;j<n-i-1;j++){
+                System.out.print(" ");
+            }
+            //increasing alphabet
+            for(int j=0;j<=i;j++){
+                System.out.print((char)('A'+j));
+            }
+            //decreasing alphabets
+            for(int j=i-1;j>=0;j--){
+                System.out.print((char)('A'+j));
+            }
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern18(int n) {
+        for(int i=0;i<n;i++){
+            char counter = (char)('A'+n-1-i);
+            for(int j=0;j<=i;j++){
+                System.out.print(counter+" ");
+                counter++;
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern19(int n) {
+        // 1. Upper Half of the Pattern
+        for (int i = 0; i < n; i++) {
+            // Stars on the left
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            // Spaces in the middle
+            for (int j = 0; j < 2 * i; j++) {
+                System.out.print(" ");
+            }
+            // Stars on the right
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // 2. Lower Half of the Pattern
+        for (int i = 0; i < n; i++) {
+            // Stars on the left
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            // Spaces in the middle
+            for (int j = 0; j < 2 * (n - i - 1); j++) {
+                System.out.print(" ");
+            }
+            // Stars on the right
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+class Solution {
+    public void pattern20(int n) {
+        // Total rows to print is 2 * n - 1
+        int totalRows = 2 * n - 1;
+        
+        // Initial configuration for the first row
+        int stars = 1;
+        int spaces = 2 * n - 2;
+        
+        for (int i = 1; i <= totalRows; i++) {
+            // 1. Print left stars
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            
+            // 2. Print middle spaces
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            
+            // 3. Print right stars
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            
+            // Move to the next line
+            System.out.println();
+            
+            // Update counts for the next row
+            if (i < n) {
+                // Upper half: stars increase, spaces decrease by 2
+                stars++;
+                spaces -= 2;
+            } else {
+                // Lower half: stars decrease, spaces increase by 2
+                stars--;
+                spaces += 2;
+            }
+        }
+    }
+}
+
+class Solution {
+    public void pattern21(int n) {
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==0 || j==0 || i==n-1 || j==n-1){
+                    System.out.print("*");
+                }
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class Solution {
+    public void pattern22(int n) {
+        int size = 2 * n - 1;
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                // Calculate distance from all 4 edges
+                int top = i;
+                int left = j;
+                int bottom = size - 1 - i;
+                int right = size - 1 - j;
+                
+                // The value is n minus the minimum distance to any edge
+                int value = n - Math.min(Math.min(top, bottom), Math.min(left, right));
+                
+                System.out.print(value + " ");
+            }
+            // Move to the next line after printing a row
+            System.out.println();
+        }
+    }
+}
+
+
