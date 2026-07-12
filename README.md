@@ -13,5 +13,5 @@ This repository contains my notes, practice problems, and solutions in simple `.
 ---
 
 ## 👩‍💻 About Me
-I’m a **3rd‑year CSE student** exploring DSA with Java.  
+I’m a **B.Tech 3rd‑year CSE student** exploring DSA with Java.  
 This repo is a reflection of my learning process, not a polished product — but it shows my consistency and growth.
