@@ -1,0 +1,70 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        // Edge case: If the array is empty, there are 0 unique elements
+        if (nums.length == 0) {
+            return 0;
+        }
+        
+        // Pointer 'i' tracks the position of the last unique element found
+        int i = 0;
+        
+        // Pointer 'j' scans through the rest of the array
+        for (int j = 1; j < nums.length; j++) {
+            // If we find a value different from our last unique element
+            if (nums[j] != nums[i]) {
+                i++;             // Move to the next available slot
+                nums[i] = nums[j]; // Overwrite it with the new unique value
+            }
+        }
+        
+        // The number of unique elements is i + 1 (since 'i' is 0-indexed)
+        return i + 1;
+    }
+}
+
+class Solution {
+    public void rotateArrayByOne(int[] nums) {
+        // Edge case check (good habit for interviews)
+        if (nums == null || nums.length <= 1) {
+            return;
+        }
+
+        // 1. Save the first element before it gets overwritten
+        int temp = nums[0];
+
+        // 2. Shift all other elements one position to the left
+        for (int i = 1; i < nums.length; i++) {
+            nums[i - 1] = nums[i];
+        }
+
+        // 3. Place the first element at the very end
+        nums[nums.length - 1] = temp;
+    }
+}
+
+class Solution {
+    public void rotateArray(int[] nums, int k) {
+        int n = nums.length;
+        k = k % n; // Handle cases where k >= n
+
+        // Step 1: Reverse the first k elements
+        reverse(nums, 0, k - 1);
+        
+        // Step 2: Reverse the remaining elements
+        reverse(nums, k, n - 1);
+        
+        // Step 3: Reverse the whole array
+        reverse(nums, 0, n - 1);
+    }
+
+    // Helper method to reverse a portion of the array
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
