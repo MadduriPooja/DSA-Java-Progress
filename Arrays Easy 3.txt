@@ -1,0 +1,85 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        // Pointer to track where the next non-zero element should be placed
+        int insertPos = 0;
+        
+        // Step 1: Move all non-zero elements to the front
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[insertPos] = nums[i];
+                insertPos++;
+            }
+        }
+        
+        // Step 2: Fill the remaining positions with zeros
+        while (insertPos < nums.length) {
+            nums[insertPos] = 0;
+            insertPos++;
+        }
+    }
+}
+
+
+class Solution {
+    public int linearSearch(int nums[], int target) {
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==target){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+
+import java.util.ArrayList;
+
+class Solution {
+    public int[] unionArray(int[] nums1, int[] nums2) {
+        ArrayList<Integer> unionList = new ArrayList<>();
+        int i = 0, j = 0;
+        int n = nums1.length;
+        int m = nums2.length;
+
+        // Traverse both arrays simultaneously
+        while (i < n && j < m) {
+            if (nums1[i] <= nums2[j]) {
+                // Add nums1[i] if it's not a duplicate of the last added element
+                if (unionList.size() == 0 || unionList.get(unionList.size() - 1) != nums1[i]) {
+                    unionList.add(nums1[i]);
+                }
+                i++;
+            } else {
+                // Add nums2[j] if it's not a duplicate of the last added element
+                if (unionList.size() == 0 || unionList.get(unionList.size() - 1) != nums2[j]) {
+                    unionList.add(nums2[j]);
+                }
+                j++;
+            }
+        }
+
+        // Add any remaining elements from nums1
+        while (i < n) {
+            if (unionList.get(unionList.size() - 1) != nums1[i]) {
+                unionList.add(nums1[i]);
+            }
+            i++;
+        }
+
+        // Add any remaining elements from nums2
+        while (j < m) {
+            if (unionList.get(unionList.size() - 1) != nums2[j]) {
+                unionList.add(nums2[j]);
+            }
+            j++;
+        }
+
+        // Convert the ArrayList back to an int[] array to match the return type
+        int[] result = new int[unionList.size()];
+        for (int k = 0; k < unionList.size(); k++) {
+            result[k] = unionList.get(k);
+        }
+        
+        return result;
+    }
+}
