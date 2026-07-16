@@ -1,0 +1,34 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        int expectedSum = (n * (n + 1)) / 2;
+        int actualSum = 0;
+        
+        for (int num : nums) {
+            actualSum += num;
+        }
+        
+        return expectedSum - actualSum;
+    }
+}
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int maxCount = 0;
+        int currentCount = 0;
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                // Increase the current streak
+                currentCount++;
+                // Update maxCount if the current streak is the biggest we've seen
+                maxCount = Math.max(maxCount, currentCount); 
+            } else {
+                // The streak is broken, reset the counter
+                currentCount = 0; 
+            }
+        }
+        
+        return maxCount;
+    }
+}
