@@ -1,0 +1,45 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        int xorResult = 0;
+        
+        for (int i = 0; i < nums.length; i++) {
+            xorResult = xorResult ^ nums[i];
+        }
+        
+        return xorResult;
+    }
+}
+
+import java.util.HashMap;
+
+class Solution {
+    public int longestSubarray(int[] nums, int k) {
+        // Map to store (prefixSum, firstIndexWhereItOccurred)
+        HashMap<Long, Integer> map = new HashMap<>();
+        long currentSum = 0;
+        int maxLength = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            currentSum += nums[i];
+
+            // Case 1: If the sum from index 0 to i equals k
+            if (currentSum == k) {
+                maxLength = i + 1;
+            }
+
+            // Case 2: If (currentSum - k) exists in the map, 
+            // it means the subarray between that old index and 'i' sums to k.
+            if (map.containsKey(currentSum - k)) {
+                maxLength = Math.max(maxLength, i - map.get(currentSum - k));
+            }
+
+            // Case 3: Only store the prefix sum if it doesn't exist yet.
+            // We want the *earliest* possible index to maximize the subarray length!
+            if (!map.containsKey(currentSum)) {
+                map.put(currentSum, i);
+            }
+        }
+
+        return maxLength;
+    }
+}
