@@ -1,0 +1,71 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int candidate = 0;
+
+        // Phase 1: Find the majority candidate
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+
+        // Phase 2: Return the candidate 
+        // (Since the problem statement guarantees a majority element exists, 
+        // we don't need a second pass to verify the count).
+        return candidate;
+    }
+}
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        // Track the maximum sum found so far
+        int maxi = Integer.MIN_VALUE; 
+        // Track the running sum of the current subarray
+        int sum = 0; 
+        
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            
+            // If current running sum is greater than the maximum sum, update maxi
+            if (sum > maxi) {
+                maxi = sum;
+            }
+            
+            // If the running sum becomes negative, discard it and reset to 0
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+        
+        return maxi;
+    }
+}
+
+class Solution {
+    public int stockBuySell(int[] arr, int n) {
+        // Track the minimum price seen so far
+        int mini = arr[0];
+        // Track the maximum profit achieved
+        int maxProfit = 0;
+
+        for (int i = 0; i < n; i++) {
+            // Calculate potential profit if sold today
+            int cost = arr[i] - mini;
+            
+            // Update max profit if this cost is higher
+            maxProfit = Math.max(maxProfit, cost);
+            
+            // Update the minimum price for future days
+            mini = Math.min(mini, arr[i]);
+        }
+
+        return maxProfit;
+    }
+}
